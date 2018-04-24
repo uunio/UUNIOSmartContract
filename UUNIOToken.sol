@@ -186,33 +186,56 @@ contract UUNIOToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
     string constant public symbol  = "UUNIO";
-    string constant public name    = "UNNIOToken";
+    string constant public name    = "UUNIO";
     uint8 constant public decimals = 8;
-    uint256 INITIAL_SUPPLY         = 900000000e8;
+
+    uint256 INITIAL_SUPPLY         = 9e8;
     uint constant unlockTime       = 0000000000;
 
-    address company     = 0x00;
-    address team        = 0x00;
-    address crowdsale   = 0x00;
-    address beneficiary = 0x00;
+    address team      = 0x00;
+    address advisors  = 0x00;
+    address reserve   = 0x00;
+    address system    = 0x00;
+    address angel     = 0x00;
+    address partners  = 0x00;
+    address preSale   = 0x00;
+    address crowdSale = 0x00;
 
-    uint constant companyTokens   = 0e8;
-    uint constant teamTokens      = 0e8;
-    uint constant crowdsaleTokens = 0e8;
-
+    // 10%
+    uint constant teamTokens      = 0.9e8;
+    // 10%    
+    uint constant advisorsTokens  = 0.9e8;
+    // 30%    
+    uint constant reserveTokens   = 2.7e8;
+    // 15.14%
+    uint constant systemTokens    = 1.3626e8;
+    // 5.556684%
+    uint constant angelTokens     = 0.50010156e8;
+    // 2.360022%
+    uint constant partnersTokens  = 0.21240198e8;
+    // 15.275652%
+    uint constant preSaleTokens   = 1.37480868e8;
+    // 11.667642%
+    uint constant crowdSaleTokens = 1.05008778e8;
 
     function UUNIOToken() public {
 
         totalSupply_ = INITIAL_SUPPLY;
 
-        preSale(company, companyTokens);
-        preSale(team, teamTokens);
-        preSale(crowdsale, crowdsaleTokens);
+        preFixed(team, teamTokens);
+        preFixed(advisors, advisorsTokens);
+        preFixed(reserve, reserveTokens);
+        preFixed(system, systemTokens);
+        preFixed(angel, angelTokens);
+        preFixed(partners, partnersTokens);
+        preFixed(preSale, preSaleTokens);
+        preFixed(crowdSale, crowdSaleTokens);
     }
 
-    function preSale(address _address, uint _amount) internal returns (bool) {
+    function preFixed(address _address, uint _amount) internal returns (bool) {
         balances[_address] = _amount;
         Transfer(address(0x0), _address, _amount);
+        return true;
     }
 
     function checkPermissions(address _from) internal constant returns (bool) {
@@ -225,13 +248,13 @@ contract UUNIOToken is StandardToken, BurnableToken, Ownable {
     function transfer(address _to, uint256 _value) public returns (bool) {
 
         require(checkPermissions(msg.sender));
-        super.transfer(_to, _value);
+        return super.transfer(_to, _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
 
         require(checkPermissions(_from));
-        super.transferFrom(_from, _to, _value);
+        return super.transferFrom(_from, _to, _value);
     }
 
     function () public payable {
