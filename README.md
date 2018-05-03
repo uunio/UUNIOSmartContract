@@ -1,6 +1,5 @@
 # UUNIO Smart Contracts
-
-<img src = "https://github.com/uunio/UUNIOSmartContract/blob/master/uunio.png">
+<img src = "https://github.com/uunio/UUNIOSmartContract/blob/master/uunio.png" height='157' width='453'>
 Ethereum smart contracts for the UUNIO ERC-20 Token.
 
 Currently a work in progress.
