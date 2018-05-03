@@ -115,7 +115,6 @@ contract BasicToken is QRC20Basic {
 
 contract BurnableToken is BasicToken {
 
-
     event Burn(address indexed burner, uint256 value);
 
     function burn(uint256 _value) public {
@@ -189,17 +188,16 @@ contract UUNIOToken is StandardToken, BurnableToken, Ownable {
     string constant public name    = "UUNIO";
     uint8 constant public decimals = 8;
 
-    uint256 INITIAL_SUPPLY         = 9e8;
-    uint constant unlockTime       = 0000000000;
+    uint256 const INITIAL_SUPPLY   = 9e8;
 
-    address team      = 0x00;
-    address advisors  = 0x00;
-    address reserve   = 0x00;
-    address system    = 0x00;
-    address angel     = 0x00;
-    address partners  = 0x00;
-    address preSale   = 0x00;
-    address crowdSale = 0x00;
+    address team      = 0x9c619ff74015becc48d429755aa54435ba367e23;
+    address advisors  = 0xb4fca416727c92f5dbfc1d3c248f9a50b9f811fe;
+    address reserve   = 0x8e2c648f493323623c2a55010953ae2b98ec7675;
+    address system    = 0x91c2ccf957c32a3f37125240942e97c1bd2ac394;
+    address angel     = 0x3f957fc80cdf9ad2a9d78c3afd13a75099a167b3;
+    address partners  = 0x8f3e215c76b312fd28fbaaf16fe98d6e9357b8ab;
+    address preSale   = 0x39401cd3f45c682bbb75ea4d3add4e268b19d0fc;
+    address crowdSale = 0xb06dd470c23979f8331e790d47866130001e7492;
 
     // 10%
     uint constant teamTokens      = 0.9e8;
@@ -238,22 +236,13 @@ contract UUNIOToken is StandardToken, BurnableToken, Ownable {
         return true;
     }
 
-    function checkPermissions(address _from) internal constant returns (bool) {
-
-        if (_from == team && now < unlockTime) { return false; }
-        if (_from == crowdsale || _from == company) { return true; }
-        return true;
-    }
-
     function transfer(address _to, uint256 _value) public returns (bool) {
 
-        require(checkPermissions(msg.sender));
         return super.transfer(_to, _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
 
-        require(checkPermissions(_from));
         return super.transferFrom(_from, _to, _value);
     }
 
