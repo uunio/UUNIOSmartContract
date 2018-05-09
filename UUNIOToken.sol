@@ -1,5 +1,5 @@
 pragma solidity ^0.4.16;    
-// pragma solidity ^0.4.13;
+
 
 library Math {
 
@@ -12,20 +12,17 @@ library Math {
         return c;
     }
 
-
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
 
         uint256 c = a / b;
         return c;
     }
 
-
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
 
         assert(b <= a);
         return a - b;
     }
-
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
 
@@ -37,6 +34,7 @@ library Math {
 
 
 contract QRC20 {
+
 
     function totalSupply() public view returns (uint256);
     function balanceOf(address who) public view returns (uint256);
@@ -109,6 +107,7 @@ contract BasicToken is QRC20 {
 
 contract BurnableToken is BasicToken {
 
+
     event Burn(address indexed burner, uint256 value);
 
     function burn(uint256 _value) public {
@@ -159,13 +158,10 @@ contract UUNIO is StandardToken, BurnableToken, Ownable {
     
     using Math for uint;
 
-    string constant public symbol  = "UUNIO";
-    string constant public name    = "UUNIO";
-    uint8 constant public decimals = 8;
-
-    uint256 constant INITIAL_SUPPLY   = 900000000e8;
-
-
+    string constant public symbol   = "UUNIO";
+    string constant public name     = "UUNIO";
+    uint8 constant public decimals  = 8;
+    uint256 constant INITIAL_SUPPLY = 900000000e8;
 
     // MAINNET
     address team      = 0x9c619ff74015becc48d429755aa54435ba367e23;
@@ -237,6 +233,7 @@ contract UUNIO is StandardToken, BurnableToken, Ownable {
     }
 
     function () public payable {
+        
         require(msg.value >= 1e8);
         benefit.transfer(msg.value);
     }
