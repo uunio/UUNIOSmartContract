@@ -11,10 +11,12 @@ You can read through contract [Solidity Source Code](https://github.com/uunio/UU
 
 Welcome any issue report.
  
-# Address
-
+# Contract Address
 ## Testnet
-0x2F61aC5829c9723Af57583152894F5fD70aC2c02
+Contract Address : 0x2F61aC5829c9723Af57583152894F5fD70aC2c02
+Etherscan : https://ropsten.etherscan.io/address/0x2f61ac5829c9723af57583152894f5fd70ac2c02#code
+
+
 
 ## Mainet
 
