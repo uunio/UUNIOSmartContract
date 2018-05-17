@@ -158,28 +158,28 @@ contract UUNIOToken is StandardToken, Ownable {
     uint256 constant INITIAL_SUPPLY = 900000000e8;
 
     // MAINNET
-    // address constant team      = 0x9c619FF74015bECc48D429755aA54435ba367e23;
-    // address constant advisors  = 0xB4fca416727c92F5dBfC1d3C248F9A50B9f811fE;
-    // address constant reserve   = 0x8E2c648f493323623C2a55010953aE2B98ec7675;
-    // address constant system1   = 0x91c2ccf957C32A3F37125240942E97C1bD2aC394;
-    // address constant system2   = 0xB9E51D549c2c0EE7976E354e8a33CD2F91Ef955C;
-    // address constant angel     = 0x3f957Fc80cdf9ad2A9D78C3aFd13a75099A167B3;
-    // address constant partners  = 0x8F3e215C76B312Fd28fBAaf16FE98d6e9357b8AB;
-    // address constant preSale   = 0x39401cd3f45C682Bbb75eA4D3aDD4E268b19D0Fc;
-    // address constant crowdSale = 0xB06DD470C23979f8331e790D47866130001e7492;
-    // address constant benefit   = 0x0Ff19B60b84040019EA6B46E6314367484f66F8F;
+    address constant team      = 0x9c619FF74015bECc48D429755aA54435ba367e23;
+    address constant advisors  = 0xB4fca416727c92F5dBfC1d3C248F9A50B9f811fE;
+    address constant reserve   = 0x8E2c648f493323623C2a55010953aE2B98ec7675;
+    address constant system1   = 0x91c2ccf957C32A3F37125240942E97C1bD2aC394;
+    address constant system2   = 0xB9E51D549c2c0EE7976E354e8a33CD2F91Ef955C;
+    address constant angel     = 0x3f957Fc80cdf9ad2A9D78C3aFd13a75099A167B3;
+    address constant partners  = 0x8F3e215C76B312Fd28fBAaf16FE98d6e9357b8AB;
+    address constant preSale   = 0x39401cd3f45C682Bbb75eA4D3aDD4E268b19D0Fc;
+    address constant crowdSale = 0xB06DD470C23979f8331e790D47866130001e7492;
+    address constant benefit   = 0x0Ff19B60b84040019EA6B46E6314367484f66F8F;
     
     // TESTNET
-    address constant team        = 0x08cF66b63c2995c7Cc611f58c3Df1305a1E46ba7;
-    address constant advisors    = 0xCf456ED49752F0376aFd6d8Ed2CC6e959E57C086;
-    address constant reserve     = 0x9F1046F1e85640256E2303AC807F895C5c0b862b;
-    address constant system1     = 0xC97eFe0481964b344Df74e8Fa09b194010736A62;
-    address constant system2     = 0xC97eFe0481964b344Df74e8Fa09b194010736A62;
-    address constant angel       = 0xd03631463a266A749C666E6066D835bDAD307FB8;
-    address constant partners    = 0xd03631463a266A749C666E6066D835bDAD307FB8;
-    address constant preSale     = 0xd03631463a266A749C666E6066D835bDAD307FB8;
-    address constant crowdSale   = 0xd03631463a266A749C666E6066D835bDAD307FB8;
-    address constant benefit     = 0x08cF66b63c2995c7Cc611f58c3Df1305a1E46ba7;
+    // address constant team        = 0x08cF66b63c2995c7Cc611f58c3Df1305a1E46ba7;
+    // address constant advisors    = 0xCf456ED49752F0376aFd6d8Ed2CC6e959E57C086;
+    // address constant reserve     = 0x9F1046F1e85640256E2303AC807F895C5c0b862b;
+    // address constant system1     = 0xC97eFe0481964b344Df74e8Fa09b194010736A62;
+    // address constant system2     = 0xC97eFe0481964b344Df74e8Fa09b194010736A62;
+    // address constant angel       = 0xd03631463a266A749C666E6066D835bDAD307FB8;
+    // address constant partners    = 0xd03631463a266A749C666E6066D835bDAD307FB8;
+    // address constant preSale     = 0xd03631463a266A749C666E6066D835bDAD307FB8;
+    // address constant crowdSale   = 0xd03631463a266A749C666E6066D835bDAD307FB8;
+    // address constant benefit     = 0x08cF66b63c2995c7Cc611f58c3Df1305a1E46ba7;
 
     // 10%
     uint constant teamTokens      = 90000000e8;
@@ -187,7 +187,7 @@ contract UUNIOToken is StandardToken, Ownable {
     uint constant advisorsTokens  = 90000000e8;
     // 30%    
     uint constant reserveTokens   = 270000000e8;
-    //// total 15.14 ///////
+    //// total 15.14, 136260000 ///////
     // 15%
     uint constant system1Tokens   = 135000000e8;
     // 0.14%
