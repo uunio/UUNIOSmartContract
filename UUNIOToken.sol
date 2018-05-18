@@ -33,7 +33,7 @@ library Math {
 }
 
 
-contract QRC20 {
+contract ERC20 {
 
 
     function totalSupply() public view returns (uint256);
@@ -74,7 +74,7 @@ contract Ownable {
 }
 
 
-contract BasicToken is QRC20 {
+contract BasicToken is ERC20 {
     
 
     using Math for uint256;
