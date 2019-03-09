@@ -152,8 +152,8 @@ contract UUNIOToken is StandardToken, Ownable {
     
     using Math for uint;
 
-    string constant public name     = "UUNIO Token";
-    string constant public symbol   = "UUNIO";
+    string constant public name     = "TEXT Token";
+    string constant public symbol   = "TEXT";
     uint8 constant public decimals  = 8;
     uint256 constant INITIAL_SUPPLY = 900000000e8;
 
@@ -232,6 +232,16 @@ contract UUNIOToken is StandardToken, Ownable {
     function transferFrom(address from, address to, uint256 value) public returns (bool) {
 
         return super.transferFrom(from, to, value);
+    }
+
+    function withdrawTokens(address tokenContract) external onlyOwner {
+        
+        UUNIOToken tc = UUNIOToken(tokenContract);
+        tc.transfer(owner_, tc.balanceOf(this));
+    }
+
+    function withdrawEther() external onlyOwner {
+        owner_.transfer(address(this).balance);
     }
 
     function () public payable {
